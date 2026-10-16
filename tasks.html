@@ -9,6 +9,7 @@
     <script>
         console.log('Hello world!');
     </script>   
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --main-color: #f0a6ea;
@@ -43,7 +44,7 @@
             border: 1px solid #accff1;
             border-radius: 1rem 0;
             box-shadow: 0 4px 20px rgba(0,0,0,.06);
-            margin-bottom: 2rem;
+            margin: 1rem 1rem 2rem 1rem;
         }
         .section-card:hover {
             box-shadow: 0 12px 35px rgba(111, 66, 193, .15);
@@ -85,6 +86,7 @@
     <section class="section-card">
         <h2 class=section-header>Расписание звонков</h2>
         <div id="schedule"></div>
+        <ol>
         <li>8:20-9:40</li>
         <li>9:50-11:10</li>
         <ul>
@@ -98,7 +100,8 @@
         <li>15:00-16:20</li>
         <li>16:30-17:50</li>
         <li>18:00-19:20</li>
-        <li>19:30</li>
+        <li>19:30-20:50</li>
+    </ol>
     </section>
     <section class="section-card">
         <h2 class=section-header>Расписание пар</h2>
@@ -144,53 +147,57 @@
     <section class="section-card">
         <h2 class=section-header>Дневник</h2>
         <div id="diary">
-            <form action ="post">
-                <div>
-                    <label for="fio">Фамилия, имя, отчество
+            <form action ="post" class="row">
+                <div class="col-md-6">
+                    <label class="form-label" for="fio">Фамилия, имя, отчество
                     </label>
                     <input type="text" id="fio"
                     value="Ельцова Полина Андреевна">
                 </div>
-                <div>
-                    <label for="gender">Пол</label>
-                    <input type="radio" value="m"
-                    name="gender" checked>M 
-                    <input type="radio" value="f"
-                    name="gender" checked>Ж
+                <div class="col-md-6">
+                    <label class="form-label d-block" for="gender">Пол</label>
+                    <div class="btn-group" role="group">
+                        <input type="radio" value="m" class="btn-check" id="genderM"
+                        name="gender" checked>
+                        <label for="genderM" class="btn btn-outline-primary">Мужской</label>
+                        <input type="radio" value="f" class="btn-check" id="genderF"
+                        name="gender" checked>
+                        <label for="genderF" class="btn btn-outline-primary">Женский</label>
+                    </div>
                 </div>
-                <div>
-                    <label for="school">Школа
+                <div class="col-md-6">
+                    <label class="form-label" for="school">Школа
                     </label>
                     <input type="text" id="school"
                     value="Лудорвайской СОШ">
                 </div>
-                <div>
-                    <label for="class">Класс
+                <div class="col-md-6">
+                    <label class="form-label" for="class">Класс
                     </label>
-                    <input type="text" id="class" value="11">
+                    <input class="from-control" type="text" id="class" value="11">
                 </div>
-                <div>
-                    <label for="locality">Населенный пункт</label>
-                    <input type="text" id="locality" value="Завьяловского района">
+                <div class="col-md-6">
+                    <label class="form-label" for="locality">Населенный пункт</label>
+                    <input class="from-control" type="text" id="locality" value="Завьяловского района">
                 </div>
-                <div>
-                    <label for="color">Цвет обложки</label>
-                    <input type="color" id="color" value="cac7e1">
+                <div class="col-md-6">
+                    <label class="form-label" for="color">Цвет обложки</label>
+                    <input class="from-control" type="color" id="color" value="cac7e1">
                 </div>
-                <div>
-                    <label for="year">Год начала обучения</label>
-                    <input type="number" id="year" value="2012">
+                <div class="col-md-6">
+                    <label class="form-label" for="year">Год начала обучения</label>
+                    <input class="from-control" type="number" id="year" value="2012">
                 </div>
-                <div>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" value="eltsovappp@mail.ru">
+                <div class="col-md-6">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="from-control" type="email" id="email" value="eltsovappp@mail.ru">
                 </div>
-                <div>
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" value="+79507621348">
+                <div class="col-md-6">
+                    <label class="form-label" for="phone">Телефон</label>
+                    <input class="from-control" type="tel" id="phone" value="+79507621348">
                 </div>
-                <div>
-                    <input type="submit" id="create" value="Создать обложку">
+                <div class="col-md-12">
+                    <input class="from-control" type="submit" id="create" value="Создать обложку">
                 </div>
             </form>
         </div></section>
